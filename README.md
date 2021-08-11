@@ -15,3 +15,9 @@ practical hands-on implementation of the sample code.  My goal is to provide
 the C++ community with something that can be used in a hands-on way to play with
 the concepts explained in the book.  Feel free to send me comments and
 questions, or to take a look at the TODO-list and send me pull-requests.
+
+## to compile
+
+```
+. run.sh
+````
