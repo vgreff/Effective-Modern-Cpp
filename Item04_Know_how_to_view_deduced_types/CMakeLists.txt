@@ -4,6 +4,7 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 add_executable(runtime_output01 runtime_output01.cpp)
 add_executable(runtime_output02 runtime_output02.cpp)
 add_executable(boost_type_index boost_type_index.cpp)
+add_executable(boost_type_indexVG boost_type_indexVG.cpp)
 
 add_library(ide_editors.cpp
             compiler_diagnostics.cpp)
