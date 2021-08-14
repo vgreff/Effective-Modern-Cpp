@@ -1,0 +1,55 @@
+actu  = std::vector<Widget, std::allocator<Widget> >
+auto  = std::vector<Widget, std::allocator<Widget> >
+caut = std::vector<Widget, std::allocator<Widget> > const
+raut = std::vector<Widget, std::allocator<Widget> >&
+crau = std::vector<Widget, std::allocator<Widget> > const&
+uaut = std::vector<Widget, std::allocator<Widget> >&&
+cuau = std::vector<Widget, std::allocator<Widget> > const&&
+T =     Widget* param = Widget* const&
+RV val (PARM) | T = std::vector<Widget, std::allocator<Widget> >  | param = std::vector<Widget, std::allocator<Widget> >&&
+RV val (FORW) | T = std::vector<Widget, std::allocator<Widget> >  | param = std::vector<Widget, std::allocator<Widget> >&&
+RV val (AUTO) | T = std::vector<Widget, std::allocator<Widget> >  | param = std::vector<Widget, std::allocator<Widget> >
+RV val (AFOR) | T = std::vector<Widget, std::allocator<Widget> >  | param = std::vector<Widget, std::allocator<Widget> >
+RV val (UREF) | T = std::vector<Widget, std::allocator<Widget> >  | param = std::vector<Widget, std::allocator<Widget> >&&
+
+RV ptr (PARM) | T = std::vector<Widget, std::allocator<Widget> >*  | param = std::vector<Widget, std::allocator<Widget> >*&&
+RV ptr (FORW) | T = std::vector<Widget, std::allocator<Widget> >*  | param = std::vector<Widget, std::allocator<Widget> >*&&
+RV ptr (AUTO) | T = std::vector<Widget, std::allocator<Widget> >*  | param = std::vector<Widget, std::allocator<Widget> >*
+RV ptr (AFOR) | T = std::vector<Widget, std::allocator<Widget> >*  | param = std::vector<Widget, std::allocator<Widget> >*
+RV ptr (UREF) | T = std::vector<Widget, std::allocator<Widget> >*  | param = std::vector<Widget, std::allocator<Widget> >*&&
+
+LV val (PARM) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >&
+LV val (FORW) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >&
+LV val (AUTO) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >
+LV val (AFOR) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >
+LV val (UREF) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >&
+
+LV cva (PARM) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> > const&
+LV cva (FORW) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> > const&
+LV cva (AUTO) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> >
+LV cva (AFOR) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> >
+LV cva (UREF) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> > const&
+
+LV rva (PARM) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >&
+LV rva (FORW) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >&
+LV rva (AUTO) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >
+LV rva (AFOR) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >
+LV rva (UREF) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >&
+
+LV rca (PARM) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> > const&
+LV rca (FORW) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> > const&
+LV rca (AUTO) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> >
+LV rca (AFOR) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> >
+LV rca (UREF) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> > const&
+
+LV uva (PARM) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >&
+LV uva (FORW) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >&
+LV uva (AUTO) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >
+LV uva (AFOR) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >
+LV uva (UREF) | T = std::vector<Widget, std::allocator<Widget> >&  | param = std::vector<Widget, std::allocator<Widget> >&
+
+LV uca (PARM) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> > const&
+LV uca (FORW) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> > const&
+LV uca (AUTO) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> >
+LV uca (AFOR) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> >
+LV uca (UREF) | T = std::vector<Widget, std::allocator<Widget> > const&  | param = std::vector<Widget, std::allocator<Widget> > const&

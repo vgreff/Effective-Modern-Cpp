@@ -95,6 +95,7 @@ int main()
     auto& vw1(vw); 
     const auto& vw4(vw); 
     auto&& vw2(createVec()); 
+    const auto&& vw5(createVec()); 
     // decltype(auto) vw3(vw1) does not work
    //auto& vw3(vw1); 
 
@@ -117,6 +118,10 @@ int main()
          << type_id_with_cvr<decltype(vw2)>().pretty_name()
          //<< " | " << type_id_with_cvr<decltype(vw2)>().name()
          << '\n';
+    cout << "cuau = "
+         << type_id_with_cvr<decltype(vw5)>().pretty_name()
+         //<< " | " << type_id_with_cvr<decltype(vw2)>().name()
+         << '\n';
    //  cout << "param3 = "
    //       << type_id_with_cvr<decltype(vw3)>().pretty_name()
    //       << '\n';
@@ -129,6 +134,9 @@ int main()
     pur("RV ptr", new std::vector<Widget>() );
     pur("LV val", vw );
     pur("LV cva", vw0 );
-    pur("LV crv", vw1 );
+    pur("LV rva", vw1 );
+    pur("LV rca", vw4 );
+    pur("LV uva", vw2 );
+    pur("LV uca", vw5 );
     // pur("RV", std::vector<Widget>() );
 }
