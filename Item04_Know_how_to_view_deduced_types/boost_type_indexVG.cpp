@@ -25,8 +25,25 @@ void f(const T& param)
        << ' ';
 
   // show param's type
-  cout << "param = "
+  cout << " | param = "
        << type_id_with_cvr<decltype(param)>().pretty_name()
+       << '\n'
+       << '\n';
+}
+
+template<typename T>
+void fr( T& param)
+{
+
+  // show T
+  cout << "T =     "
+       << type_id_with_cvr<T>().pretty_name()
+       << ' ';
+
+  // show param's type
+  cout << " | param = "
+       << type_id_with_cvr<decltype(param)>().pretty_name()
+       << '\n'
        << '\n';
 }
 
@@ -94,8 +111,13 @@ int main()
     const auto vw0 = createVec();        // init vw w/factory return
     auto& vw1(vw); 
     const auto& vw4(vw); 
+
+    //the following 2 are BAD because they are ref to the temporary returned by function 
+    // per output below of   pur("LV uva", vw2 );     pur("LV uca", vw5 );
+
     auto&& vw2(createVec()); 
     const auto&& vw5(createVec()); 
+    
     // decltype(auto) vw3(vw1) does not work
    //auto& vw3(vw1); 
 
@@ -122,14 +144,20 @@ int main()
          << type_id_with_cvr<decltype(vw5)>().pretty_name()
          //<< " | " << type_id_with_cvr<decltype(vw2)>().name()
          << '\n';
-   //  cout << "param3 = "
-   //       << type_id_with_cvr<decltype(vw3)>().pretty_name()
-   //       << '\n';
+
+    //  cout << "param3 = "
+    //       << type_id_with_cvr<decltype(vw3)>().pretty_name()
+    //       << '\n';
+
+    cout << '\n';
 
     if (!vw.empty()) {
       f(&vw[0]);                        // call f
+      f(vw[0]);                        // call f
+      fr(vw[0]);                        // call fr
       // ...
     }
+
     pur("RV val", std::vector<Widget>() );
     pur("RV ptr", new std::vector<Widget>() );
     pur("LV val", vw );

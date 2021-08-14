@@ -5,7 +5,13 @@ raut = std::vector<Widget, std::allocator<Widget> >&
 crau = std::vector<Widget, std::allocator<Widget> > const&
 uaut = std::vector<Widget, std::allocator<Widget> >&&
 cuau = std::vector<Widget, std::allocator<Widget> > const&&
-T =     Widget* param = Widget* const&
+
+T =     Widget*  | param = Widget* const&
+
+T =     Widget  | param = Widget const&
+
+T =     Widget  | param = Widget&
+
 RV val (PARM) | T = std::vector<Widget, std::allocator<Widget> >  | param = std::vector<Widget, std::allocator<Widget> >&&
 RV val (FORW) | T = std::vector<Widget, std::allocator<Widget> >  | param = std::vector<Widget, std::allocator<Widget> >&&
 RV val (AUTO) | T = std::vector<Widget, std::allocator<Widget> >  | param = std::vector<Widget, std::allocator<Widget> >
