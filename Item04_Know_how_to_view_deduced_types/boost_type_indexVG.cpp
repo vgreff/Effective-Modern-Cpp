@@ -90,25 +90,36 @@ T&& decl1(std::forward<T>(param));
 
 int main()
 {
-
     auto vw = createVec();        // init vw w/factory return
     const auto vw0 = createVec();        // init vw w/factory return
     auto& vw1(vw); 
+    const auto& vw4(vw); 
     auto&& vw2(createVec()); 
+    // decltype(auto) vw3(vw1) does not work
+   //auto& vw3(vw1); 
 
-    cout << "param  = "
+    cout << "actu  = "
+       << type_id_with_cvr<decltype(createVec())>().pretty_name()
+       << '\n';
+    cout << "auto  = "
        << type_id_with_cvr<decltype(vw)>().pretty_name()
        << '\n';
-    cout << "param0 = "
+    cout << "caut = "
        << type_id_with_cvr<decltype(vw0)>().pretty_name()
        << '\n';
-    cout << "param1 = "
+    cout << "raut = "
        << type_id_with_cvr<decltype(vw1)>().pretty_name()
        << '\n';
-    cout << "param2 = "
+    cout << "crau = "
+       << type_id_with_cvr<decltype(vw4)>().pretty_name()
+       << '\n';
+    cout << "uaut = "
          << type_id_with_cvr<decltype(vw2)>().pretty_name()
-         << " | " << type_id_with_cvr<decltype(vw2)>().name()
+         //<< " | " << type_id_with_cvr<decltype(vw2)>().name()
          << '\n';
+   //  cout << "param3 = "
+   //       << type_id_with_cvr<decltype(vw3)>().pretty_name()
+   //       << '\n';
 
     if (!vw.empty()) {
       f(&vw[0]);                        // call f
@@ -118,5 +129,6 @@ int main()
     pur("RV ptr", new std::vector<Widget>() );
     pur("LV val", vw );
     pur("LV cva", vw0 );
+    pur("LV crv", vw1 );
     // pur("RV", std::vector<Widget>() );
 }
