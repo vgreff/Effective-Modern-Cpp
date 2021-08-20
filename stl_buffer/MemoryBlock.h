@@ -34,11 +34,10 @@ public:
 
    // Copy constructor.
    MemoryBlock(const MemoryBlock& other)
-      : _length(other._length)
-      , _data(new int[other._length])
+       : _data(nullptr), _length(0)
    {
       std::cout << "In MemoryBlock(const MemoryBlock&). length = "
-                << other._length << ". Copying resource." << std::endl;
+                << other._length << ". Copying resource." << std::endl << "   ";
 
       //std::copy(other._data, other._data + _length, _data);
       *this = other;
@@ -62,18 +61,18 @@ public:
       return *this;
    }
    // Move constructor.
-   MemoryBlock(MemoryBlock &&other) noexcept
+   MemoryBlock(MemoryBlock&& other) noexcept
        : _data(nullptr), _length(0)
    {
        std::cout << "In MemoryBlock(MemoryBlock&&). length = "
-                 << other._length << ". Moving resource." << std::endl;
-                 
+                 << other._length << ". Moving resource." << std::endl << "   ";
+
        //*this = std::move(other); 
        *this = std::forward<MemoryBlock>(other);
    }
 
    // Move assignment operator.
-   MemoryBlock &operator=(MemoryBlock &&other) noexcept
+   MemoryBlock& operator=(MemoryBlock&& other) noexcept
    {
        std::cout << "In operator=(MemoryBlock&&). length = "
                  << other._length << "." << std::endl;
@@ -97,7 +96,7 @@ public:
    }
 
    // Retrieves the length of the data resource.
-   size_t Length() const
+   size_t size() const
    {
       return _length;
    }
