@@ -2,14 +2,27 @@
 
 #include "MemoryBlock.h"
 #include <vector>
+#include <boost/type_index.hpp>
+  using boost::typeindex::type_id_with_cvr;
 
 using namespace std;
 
 template<typename T>
-void printVec( T&& v)
+//void printVec( T&& v)
+void printVec(const T& v)
 {
   cout << "\n printing vec" << endl;
-  for (const auto& elt : v)
+  // show T
+  cout << "T="
+       << type_id_with_cvr<T>().pretty_name()
+       << ' ';
+
+  // show param's type
+  cout << " | param="
+       << type_id_with_cvr<decltype(v)>().pretty_name()
+       << '\n';
+
+  for (const auto &elt : v)
   {
     cout << elt.size() << endl;
   }
