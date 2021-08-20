@@ -3,9 +3,12 @@
 #include "MemoryBlock.h"
 #include <vector>
 #include <boost/type_index.hpp>
-  using boost::typeindex::type_id_with_cvr;
+using boost::typeindex::type_id_with_cvr;
 
 using namespace std;
+
+// template<typename T>    
+// using vgtype = type_id_with_cvr<T>;
 
 template<typename T>
 //void printVec( T&& v)
