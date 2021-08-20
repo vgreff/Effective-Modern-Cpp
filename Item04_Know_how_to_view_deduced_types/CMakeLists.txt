@@ -1,5 +1,3 @@
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
- conan_basic_setup()
 
 add_executable(runtime_output01 runtime_output01.cpp)
 add_executable(runtime_output02 runtime_output02.cpp)

@@ -26,6 +26,9 @@ set(CMAKE_CXX_FLAGS "-std=c++11")
 
 find_package(Threads REQUIRED)
 
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+ conan_basic_setup()
+
 add_subdirectory(Item01_Understand_template_type_deduction)
 add_subdirectory(Item02_Understand_auto_type_deduction)
 add_subdirectory(Item03_Understand_decltype)
