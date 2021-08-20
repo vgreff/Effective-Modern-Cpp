@@ -34,7 +34,7 @@ public:
 
    // Copy constructor.
    MemoryBlock(const MemoryBlock& other)
-       : _data(nullptr), _length(0)
+//       : _data(nullptr), _length(0)
    {
       std::cout << "In MemoryBlock(const MemoryBlock&). length = "
                 << other._length << ". Copying resource." << std::endl << "   ";
@@ -47,22 +47,24 @@ public:
    MemoryBlock& operator=(const MemoryBlock& other)
    {
       std::cout << "In operator=(const MemoryBlock&). length = "
-                << other._length << ". Copying resource." << std::endl;
+                << other._length << ". Copying resource. " ;
 
       if (this != &other)
       {
          // Free the existing resource.
          delete[] _data;
+         std::cout << "DEL length=" << _length << " ";
 
-         _length = other._length;
+             _length = other._length;
          _data = new int[_length];
          std::copy(other._data, other._data + _length, _data);
       }
+      std::cout << std::endl;
       return *this;
    }
    // Move constructor.
    MemoryBlock(MemoryBlock&& other) noexcept
-       : _data(nullptr), _length(0)
+//       : _data(nullptr), _length(0)
    {
        std::cout << "In MemoryBlock(MemoryBlock&&). length = "
                  << other._length << ". Moving resource." << std::endl << "   ";
@@ -75,11 +77,12 @@ public:
    MemoryBlock& operator=(MemoryBlock&& other) noexcept
    {
        std::cout << "In operator=(MemoryBlock&&). length = "
-                 << other._length << "." << std::endl;
+                 << other._length << ".  ";
 
        if (this != &other)
        {
            // Free the existing resource.
+           std::cout << "DEL length=" << _length << " ";
            delete[] _data;
 
            // Copy the data pointer and its length from the
@@ -92,6 +95,7 @@ public:
            other._data = nullptr;
            other._length = 0;
        }
+       std::cout << std::endl;
        return *this;
    }
 
@@ -102,6 +106,6 @@ public:
    }
 
 private:
-   size_t _length; // The length of the resource.
-   int* _data; // The resource.
+   size_t _length = 0 ; // The length of the resource.
+   int* _data = nullptr; // The resource.
 };
